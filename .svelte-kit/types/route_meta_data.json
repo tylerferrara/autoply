@@ -3,6 +3,7 @@
 	"/about": [
 		"src/routes/about/+page.js"
 	],
+	"/begin": [],
 	"/stock": [
 		"src/routes/stock/+page.js"
 	],

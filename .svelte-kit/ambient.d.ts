@@ -26,15 +26,13 @@
  * ```
  */
 declare module '$env/static/private' {
-	export const LESSOPEN: string;
 	export const USER: string;
 	export const npm_config_user_agent: string;
 	export const STARSHIP_SHELL: string;
-	export const SSH_AGENT_PID: string;
 	export const npm_node_execpath: string;
+	export const WT_PROFILE_ID: string;
 	export const SHLVL: string;
 	export const npm_config_noproxy: string;
-	export const MOTD_SHOWN: string;
 	export const HOME: string;
 	export const OLDPWD: string;
 	export const NVM_BIN: string;
@@ -48,9 +46,9 @@ declare module '$env/static/private' {
 	export const npm_config_metrics_registry: string;
 	export const WAYLAND_DISPLAY: string;
 	export const LOGNAME: string;
-	export const NAME: string;
-	export const WSL_INTEROP: string;
 	export const PULSE_SERVER: string;
+	export const WSL_INTEROP: string;
+	export const NAME: string;
 	export const _: string;
 	export const npm_config_prefix: string;
 	export const TERM: string;
@@ -60,28 +58,24 @@ declare module '$env/static/private' {
 	export const NODE: string;
 	export const npm_package_name: string;
 	export const XDG_RUNTIME_DIR: string;
+	export const WT_SESSION: string;
 	export const DISPLAY: string;
 	export const LANG: string;
-	export const LS_COLORS: string;
 	export const npm_lifecycle_script: string;
-	export const SSH_AUTH_SOCK: string;
 	export const SHELL: string;
 	export const npm_package_version: string;
 	export const npm_lifecycle_event: string;
-	export const LESSCLOSE: string;
 	export const npm_config_globalconfig: string;
 	export const npm_config_init_module: string;
 	export const PWD: string;
 	export const npm_execpath: string;
-	export const XDG_DATA_DIRS: string;
 	export const NVM_CD_FLAGS: string;
 	export const npm_config_global_prefix: string;
 	export const STARSHIP_SESSION_KEY: string;
 	export const npm_command: string;
-	export const WSL2_GUI_APPS_ENABLED: string;
 	export const HOSTTYPE: string;
+	export const WSL2_GUI_APPS_ENABLED: string;
 	export const WSLENV: string;
-	export const NVM_RC_VERSION: string;
 	export const INIT_CWD: string;
 	export const EDITOR: string;
 	export const NODE_ENV: string;
@@ -114,15 +108,13 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
-		LESSOPEN: string;
 		USER: string;
 		npm_config_user_agent: string;
 		STARSHIP_SHELL: string;
-		SSH_AGENT_PID: string;
 		npm_node_execpath: string;
+		WT_PROFILE_ID: string;
 		SHLVL: string;
 		npm_config_noproxy: string;
-		MOTD_SHOWN: string;
 		HOME: string;
 		OLDPWD: string;
 		NVM_BIN: string;
@@ -136,9 +128,9 @@ declare module '$env/dynamic/private' {
 		npm_config_metrics_registry: string;
 		WAYLAND_DISPLAY: string;
 		LOGNAME: string;
-		NAME: string;
-		WSL_INTEROP: string;
 		PULSE_SERVER: string;
+		WSL_INTEROP: string;
+		NAME: string;
 		_: string;
 		npm_config_prefix: string;
 		TERM: string;
@@ -148,28 +140,24 @@ declare module '$env/dynamic/private' {
 		NODE: string;
 		npm_package_name: string;
 		XDG_RUNTIME_DIR: string;
+		WT_SESSION: string;
 		DISPLAY: string;
 		LANG: string;
-		LS_COLORS: string;
 		npm_lifecycle_script: string;
-		SSH_AUTH_SOCK: string;
 		SHELL: string;
 		npm_package_version: string;
 		npm_lifecycle_event: string;
-		LESSCLOSE: string;
 		npm_config_globalconfig: string;
 		npm_config_init_module: string;
 		PWD: string;
 		npm_execpath: string;
-		XDG_DATA_DIRS: string;
 		NVM_CD_FLAGS: string;
 		npm_config_global_prefix: string;
 		STARSHIP_SESSION_KEY: string;
 		npm_command: string;
-		WSL2_GUI_APPS_ENABLED: string;
 		HOSTTYPE: string;
+		WSL2_GUI_APPS_ENABLED: string;
 		WSLENV: string;
-		NVM_RC_VERSION: string;
 		INIT_CWD: string;
 		EDITOR: string;
 		NODE_ENV: string;
