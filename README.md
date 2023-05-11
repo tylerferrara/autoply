@@ -1,6 +1,6 @@
-# create-svelte
+# Autoply 🪐
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Automate the job application process by finding and applying for the roles that meet your needs.
 
 ## Creating a project
 
@@ -36,3 +36,6 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+## Find this useful?
+Venmo your maintainer: @tjferrara
