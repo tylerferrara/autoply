@@ -1,4 +1,5 @@
 <script>
+    import planet from '$lib/images/planet.svg';
 	import './styles.css';
 </script>
 
@@ -12,6 +13,8 @@
 </svelte:head>
 
 <section class="center fill">
+
+    <img src={planet} alt="" class="logo" />
 
     <div class="welcome-header">
         <h1>Be the first to apply to jobs</h1>
@@ -28,3 +31,13 @@
     </a>
 
 </section>
+
+<style>
+    .logo {
+        width: 14rem;
+    }
+    .welcome-header > * {
+        margin: 0;
+        padding: 0;
+    }
+</style>

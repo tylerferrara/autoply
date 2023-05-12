@@ -24,10 +24,7 @@ body {
     cursor: pointer;
 }
 
-.welcome-header > * {
-    margin: 0;
-    padding: 0;
-}
+
 
 .center {
     display: flex;
