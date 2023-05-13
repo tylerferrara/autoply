@@ -30,7 +30,6 @@ declare module '$env/static/private' {
 	export const STARSHIP_SHELL: string;
 	export const MANPATH: string;
 	export const TERM_PROGRAM: string;
-	export const MallocProbGuardViaLaunchd: string;
 	export const NODE: string;
 	export const INIT_CWD: string;
 	export const NVM_CD_FLAGS: string;
@@ -127,7 +126,6 @@ declare module '$env/dynamic/private' {
 		STARSHIP_SHELL: string;
 		MANPATH: string;
 		TERM_PROGRAM: string;
-		MallocProbGuardViaLaunchd: string;
 		NODE: string;
 		INIT_CWD: string;
 		NVM_CD_FLAGS: string;

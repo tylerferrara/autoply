@@ -3,6 +3,10 @@
 	"/about": [
 		"src/routes/about/+page.js"
 	],
+	"/account": [],
+	"/api": [
+		"src/routes/api/+server.js"
+	],
 	"/begin": [],
 	"/stock": [
 		"src/routes/stock/+page.js"
