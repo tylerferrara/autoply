@@ -1,36 +1,38 @@
 {
-	"name": "autoply",
-	"version": "0.0.1",
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
-		"test": "playwright test",
-		"test:unit": "vitest",
-		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
-	},
-	"devDependencies": {
-		"@fontsource/fira-mono": "^4.5.10",
-		"@neoconfetti/svelte": "^1.0.0",
-		"@playwright/test": "^1.28.1",
-		"@sveltejs/adapter-auto": "^2.0.1",
-		"@sveltejs/adapter-vercel": "^2.4.3",
-		"@sveltejs/kit": "^1.5.0",
-		"@types/cookie": "^0.5.1",
-		"eslint": "^8.28.0",
-		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-svelte": "^2.26.0",
-		"prettier": "^2.8.0",
-		"prettier-plugin-svelte": "^2.8.1",
-		"svelte": "^3.54.0",
-		"svelte-check": "^3.0.1",
-		"typescript": "^5.0.0",
-		"vite": "^4.3.0",
-		"vite-plugin-mkcert": "^1.15.0",
-		"vitest": "^0.25.3"
-	},
-	"type": "module"
+  "name": "my-qwik-empty-starter",
+  "description": "App with Routing built-in ready to create your app",
+  "engines": {
+    "node": ">=15.0.0"
+  },
+  "private": true,
+  "scripts": {
+    "build": "qwik build",
+    "build.client": "vite build",
+    "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.types": "tsc --incremental --noEmit",
+    "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
+    "dev": "vite --mode ssr",
+    "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+    "fmt": "prettier --write .",
+    "fmt.check": "prettier --check .",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "preview": "qwik build preview && vite preview --open",
+    "start": "vite --open --mode ssr",
+    "qwik": "qwik"
+  },
+  "devDependencies": {
+    "@builder.io/qwik": "^1.1.2",
+    "@builder.io/qwik-city": "^1.1.2",
+    "@types/eslint": "8.37.0",
+    "@types/node": "^20.1.0",
+    "@typescript-eslint/eslint-plugin": "5.59.2",
+    "@typescript-eslint/parser": "5.59.2",
+    "eslint": "8.40.0",
+    "eslint-plugin-qwik": "^1.1.2",
+    "prettier": "2.8.8",
+    "typescript": "5.0.4",
+    "undici": "5.22.0",
+    "vite": "4.3.5",
+    "vite-tsconfig-paths": "4.2.0"
+  }
 }
