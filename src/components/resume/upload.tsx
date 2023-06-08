@@ -1,5 +1,4 @@
 import { $, component$, useStore, useSignal, useStylesScoped$ } from '@builder.io/qwik';
-import fs from 'fs';
 
 export interface UploadProps {
     onChange: (resume: string) => void;

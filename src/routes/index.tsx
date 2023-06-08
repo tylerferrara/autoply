@@ -17,8 +17,8 @@ export default component$(() => {
       cursor: pointer;
     }
   `);
-  const onScopeChange = $((tag: string) => {
-    application.tags.push(tag);
+  const onScopeChange = $((tags: string[]) => {
+    application.tags = tags;
   });
   const onUploadChange = $((resume: string) => {
     application.resume = resume;

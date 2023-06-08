@@ -2,7 +2,7 @@ import { $, component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import { Tag } from './tag';
 
 export interface ScopeProps {
-    onChange: (tag: string) => void;
+    onChange: (tag: string[]) => void;
 }
 
 export const Scope = component$((props: ScopeProps) => {
@@ -12,12 +12,13 @@ export const Scope = component$((props: ScopeProps) => {
 
     const onChange = $((e: any) => {
       scopeTags.push(e.target.value);
-      props.onChange(e.target.value)
+      props.onChange(scopeTags)
       e.target.value = '';
     });
 
     const removeTag = $((id: string) => {
         scopeTags.splice(parseInt(id), 1);
+        props.onChange(scopeTags);
     });
 
     useStylesScoped$(`
