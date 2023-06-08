@@ -18,15 +18,22 @@ export const Upload = component$(() => {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: lightgray;
+            background-color: #DEDEDE;
             cursor: pointer;
             min-height: 10rem;
             max-width: 20rem;
-            border: 2px dashed black;
+            border: 3px dashed black;
             flex-direction: column;
+            padding: 1rem;
         }
         input[type="file"] {
             display: none;
+        }
+        .upload-container {
+            display:inline-block;
+        }
+        .upload-file:hover {
+            background-color: #BABABA;
         }
     `);
     return <div class="upload">

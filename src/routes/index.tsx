@@ -30,7 +30,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: 'Welcome to Qwik',
+  title: 'Apply to all jobs at once',
   meta: [
     {
       name: 'description',
