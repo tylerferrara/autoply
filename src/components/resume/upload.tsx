@@ -1,4 +1,4 @@
-import { $, component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
+import { $, component$, useStore, useSignal, useStylesScoped$ } from '@builder.io/qwik';
 import fs from 'fs';
 
 export interface UploadProps {
@@ -12,16 +12,21 @@ interface File {
 
 export const Upload = component$((props: UploadProps) => {
     const empty = {name: "", path: ""};
-    var file = useStore<File>(empty);
-    const title = (file.name === "" ? "Drag and drop your resume here" : file.name);
+    var fileStore = useStore<File>(empty);
+    const title = (fileStore.name === "" ? "Drag and drop your resume here" : fileStore.name);
+
+    var added = useSignal<string>("");
 
     const inputHandler = $((event: any) => {
         const file = event.target.files[0];
+        fileStore.name = file.name;
+        fileStore.path = file.path;
 
         if (file.type === 'application/pdf') {
             const reader = new FileReader();
         
             reader.onload = () => {
+                added.value = "added";
                 props.onChange(reader.result as string);
             };
         
@@ -51,13 +56,16 @@ export const Upload = component$((props: UploadProps) => {
         .upload-file:hover {
             background-color: #BABABA;
         }
+        .added {
+            background-color: lightblue;
+        }
     `);
     return <div class="upload">
         <h2>Upload Resume</h2>
         <div class="upload-container">
             <label class="custom-file-upload">
                 <input type="file" accept="application/pdf" onInput$={inputHandler}/>
-                <div class="upload-file">
+                <div class={"upload-file " + added.value}>
                     <p>{title}</p>
                     <span class="material-icons-round">file_present</span>
                 </div>
