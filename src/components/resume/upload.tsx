@@ -1,16 +1,32 @@
 import { $, component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
+import fs from 'fs';
+
+export interface UploadProps {
+    onChange: (resume: string) => void;
+}
 
 interface File {
     name: string;
     path: string;
 }
 
-export const Upload = component$(() => {
+export const Upload = component$((props: UploadProps) => {
     const empty = {name: "", path: ""};
-    const fileName = useStore<File>(empty);
-    const title = (fileName.name === "" ? "Drag and drop your resume here" : fileName.name);
-    const onChange = $((e: any) => {
-        fileName.name = e.target.files[0].name;
+    var file = useStore<File>(empty);
+    const title = (file.name === "" ? "Drag and drop your resume here" : file.name);
+
+    const inputHandler = $((event: any) => {
+        const file = event.target.files[0];
+
+        if (file.type === 'application/pdf') {
+            const reader = new FileReader();
+        
+            reader.onload = () => {
+                props.onChange(reader.result as string);
+            };
+        
+            reader.readAsText(file);
+        }
     });
 
     useStylesScoped$(`
@@ -40,7 +56,7 @@ export const Upload = component$(() => {
         <h2>Upload Resume</h2>
         <div class="upload-container">
             <label class="custom-file-upload">
-                <input type="file" accept="application/pdf" onChange$={onChange}/>
+                <input type="file" accept="application/pdf" onInput$={inputHandler}/>
                 <div class="upload-file">
                     <p>{title}</p>
                     <span class="material-icons-round">file_present</span>

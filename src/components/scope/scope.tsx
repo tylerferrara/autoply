@@ -1,11 +1,18 @@
 import { $, component$, useStore, useStylesScoped$ } from '@builder.io/qwik';
 import { Tag } from './tag';
 
-export const Scope = component$(() => {
+export interface ScopeProps {
+    onChange: (tag: string) => void;
+}
+
+export const Scope = component$((props: ScopeProps) => {
     const scopeTags = useStore<string[]>(["developer"]);
-  
+    
+
+
     const onChange = $((e: any) => {
       scopeTags.push(e.target.value);
+      props.onChange(e.target.value)
       e.target.value = '';
     });
 
